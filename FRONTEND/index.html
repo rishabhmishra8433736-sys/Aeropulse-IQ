@@ -1,0 +1,376 @@
+<!-----------------------------------------------AEROPULSE-IQ (INDEX.HTML)---------------------------------------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>AI Air Pollution Monitoring System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/chart.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet"  href ="css/notification.css">
+     <link rel="stylesheet"  href ="css/variables.css">
+     <link rel="stylesheet"  href ="css/theme.css">
+       <link rel="stylesheet"  href ="css/background-animation.css">
+       <link rel="stylesheet"  href ="css/admin.dropdown.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet"href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    </head><body>
+    <div class="background-animation"></div>
+   </div>
+  <header class="navbar">
+    <div class="logo">
+     <img src="images/logo.jpg"  alt="🌍">
+    <div class="logo-text">  <h1> Aeropulse-IQ</h1>
+    <span> AI  Air Pollution Monitoring & 
+        Prediction System </span></div></div>
+    <nav><ul>
+             <li><a href="index.html">Dashboard</a></li>
+            <li><a href="map.html">Live Map</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <div class="nav-right">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="text"
+                id="locationSearch"
+                placeholder="Search...">
+        </div>
+         <div class ="theme-toggle" id="themeToggle">
+           <i class="fa-solid fa-moon"></i>
+         </div>
+        <div class="notification" id="notificationBell">
+    <i class="fa-solid fa-bell"></i>
+    <span id="notificationCount">3</span>
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-header">
+    <h3>
+        🔔 Notifications
+    </h3>
+    <div class="header-actions">
+        <button id="markRead">
+            Mark Read
+        </button>
+        <button id="clearNotifications">
+            Clear
+        </button>
+    </div>
+</div>
+<div class="notification-search">
+    <input
+        type="text"
+        id="notificationSearch"
+        placeholder="Search notifications...">
+</div>
+        <div class="notification-list" id="notificationList">
+            <div class="notification-item unread">
+                <div class="icon danger">
+                    🚨
+                </div>
+                <div class="content">
+                    <h4>AQI Increased</h4>
+                    <p>Current AQI reached 182.</p>
+                    <small>2 min ago</small>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <div class="icon info">
+                    <i class ="fa-solid fa-robot"></i>
+                </div>
+                <div class="content">
+                    <h4>AI Prediction</h4>
+                    <p>Pollution expected to increase in 6 hours.</p>
+                    <small>8 min ago</small>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="icon success">
+                    ✅
+                </div>
+                <div class="content">
+                    <h4>System Updated</h4>
+                    <p>Dashboard synchronized successfully.</p>
+                    <small>1 hour ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="profile" id="adminProfile">
+    <img src="images/admin.jpg" alt="Admin">
+    <div class="profile-info">
+        <h4>Rishabh Mishra</h4>
+        <small>Administrator</small>
+    </div>
+    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <img src="images/admin.jpg" alt="Admin">
+            <div>
+                <h3> Rishabh Mishra</h3>
+                <span>System Administrator</span>
+                <p class="online-status">
+                    ● Online
+                </p>
+            </div>
+        </div>
+        <div class="admin-menu">
+            <div class="admin-item" data-page="profile.html">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </div>
+            <div class="admin-item"  data-page="admin.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Admin Control Panel</span>
+            </div>
+            <div class="admin-item" data-page="account-statistics.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard Statistics</span>
+            </div>
+            <div class="admin-item" data-page="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </div>
+            <div class="admin-item" data-page="security.html">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Security</span>
+            </div>
+            <div class="admin-item"  data-page="activity.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Activity Logs</span>
+            </div>
+            <div class="admin-item"data-page="backup.html">
+                <i class="fa-solid fa-database"></i>
+                <span>Backup & Restore</span>
+            </div>
+            <hr>
+            <div class="admin-item logout" id="logoutBtn" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+<div class="container">
+   <aside class="sidebar">
+    <div class="title">
+        Main Menu
+    </div>
+    <ul>
+        <li class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Live Map</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Analytics</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-wind"></i>
+            <span>Air Quality</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-cloud-sun"></i>
+            <span>Weather</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-robot"></i>
+            <span>AI Prediction</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-bell"></i>
+            <span>Alerts</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Reports</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-gear"></i>   
+            <span>Settings</span>
+        </li><hr> 
+    </ul>
+</aside>
+    <main class="dashboard">
+        <section class="page-title">
+    <div class="dashboard-header">
+        <h1>Air Quality Dashboard</h1>
+        <p>
+            Real-Time Environmental Monitoring System
+        </p>
+       <button onclick="exportPDFReport()" id =" exportBtn" class ="export-btn">📄 Export Report</button>
+    </div>
+    <div class="last-updated">
+        <h4>Last Updated</h4>
+        <span id="updateTime">
+            10 July 2026 | 10:30 AM
+        </span></div>
+</section>
+        <section class="cards">
+          <div class="card aqi-card">
+    <i class="fa-solid fa-smog card-icon"></i>
+    <h3>AQI</h3>
+    <h2 id="aqi">145</h2>
+    <span class="status moderate">
+        Moderate
+    </span>
+    <div class="trend up">
+        ↑ 8% Today
+    </div>
+</div>
+           <div class="card pm25-card">
+    <i class="fa-solid fa-lungs card-icon"></i>
+    <h3>PM2.5</h3>
+    <h2 id="pm25">82</h2>
+    <p>µg/m³</p>
+</div>
+            <div class="card pm10-card">
+    <i class="fa-solid fa-cloud card-icon"></i>
+    <h3>PM10</h3>
+    <h2 id="pm10">145</h2>
+    <p>µg/m³</p>
+</div>
+            <div class="card temp-card">
+    <i class="fa-solid fa-temperature-three-quarters card-icon"></i>
+    <h3>Temperature</h3>
+    <h2 id="temperature">32</h2>
+    <p>°C</p>
+</div>
+            <div class="card humidity-card">
+    <i class="fa-solid fa-droplet card-icon"></i>
+    <h3>Humidity</h3>
+    <h2 id="humidity">65</h2>
+    <p>%</p>
+</div>
+           <div class="card wind-card">
+    <i class="fa-solid fa-wind card-icon"></i>
+    <h3>Wind Speed</h3>
+    <h2 id="wind">12</h2>
+    <p>km/h</p>
+</div>
+        </section>   
+<div class="dashboard-grid">
+    <div class="left-panel">
+        <section class="panel">
+            <h2>📈 Live Pollution Graph</h2>
+            <div class="chart-placeholder">
+                <canvas id="pollutionChart"></canvas>
+            </div>
+        </section>
+        <section class ="panel">
+            <h2>🗺 Live Pollution Map </h2>
+            <div id ="map"></div>
+        </section>
+        <section class="panel">
+            <h2>🌦 Weather Information</h2>
+            <div class="weather">
+                <div class="weather-box">
+                    <i class="fa-solid fa-temperature-half"></i>
+                    <h3>32°C</h3>
+                    <p>Temperature</p>
+                </div>
+                <div class="weather-box">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>65%</h3>
+                    <p>Humidity</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="right-panel">
+        <section class="panel prediction">
+            <h2><i class ="fa-solid fa-robot"> <b>P U L S E - IQ</b> </i></h2>
+    <div class="prediction-grid">
+        <div class="prediction-item">
+            <h4>Current AQI</h4>
+            <span id="currentAQI">--</span>
+        </div>
+        <div class="prediction-item">
+            <h4>1 Hour</h4>
+            <span id="prediction1h">--</span>
+        </div>
+        <div class="prediction-item">
+            <h4>6 Hours</h4>
+            <span id="prediction6h">--</span>
+        </div>
+        <div class="prediction-item">
+            <h4>24 Hours</h4>
+            <span id="prediction24h">--</span>
+        </div>
+    </div>
+ <div class="health-score">
+    <h3>AI Health Score</h3>
+   <div class="health-bar">
+        <div
+            id="healthFill"
+            class="health-fill">
+        </div>
+    </div>
+    <h2 id="healthScore">0%</h2>
+</div>
+<div class="risk-meter">
+    <h3>Pollution Risk Level</h3>
+    <div class="risk-bar">
+        <div id="riskFill" class="risk-fill"></div>
+    </div>
+    <h2 id="riskText">Loading...</h2>
+</div>
+    <hr>
+    <p><strong>Trend :</strong> <span id="predictionTrend">Loading...</span></p>
+    <p><strong>Risk :</strong> <span id="predictionRisk">Loading...</span></p>
+    <p><strong>Confidence :</strong> <span id="predictionConfidence">Loading...</span></p>
+    <p><strong>Recommendation :</strong> <span id="predictionText">Loading...</span></p>
+        </section>
+        <section class="panel">
+            <h2>🚨 Alerts</h2><div id ="alerts"></div>
+            </div>
+        </section>
+    </div>
+</div>
+        <section class="alerts">
+            <h2>Recent Alerts</h2>
+            <ul>
+                               <li>No Alerts Available</li>
+            </ul>
+        </section>
+    </main>
+</div>
+<footer>
+    <p>
+        © 2026  Aeropulse-IQ | All Rights Reserved 
+        <p><B> BY-RISHABH MISHRA </B></p>
+    </p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/report.js"></script>
+<script src="js/app.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/map.js"></script>
+<script src="js/alerts.js"></script>
+<script src="js/export.js"> </script>
+<script src="js/auth.js"></script>
+<script src="js/notification.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/background-animation.js"></script>
+<script src="js/admin-dropdown.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>
