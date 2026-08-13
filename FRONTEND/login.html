@@ -1,0 +1,71 @@
+<!-----------------------------AEROPULSE-IQ(LOG-IN.HTML)-------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | AI Air Pollution Monitoring System</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="login-container">
+    <div class="login-card">
+        <div class="logo-section">
+            <img src="images/logo.jpg" alt="Logo">
+            <h1>Aeropulse-IQ</h1>
+            <p>Ai Air Pollution Monitoring System</p>
+        </div>
+        <div class="social-login">
+    <button class="google-btn" type="button">
+        <i class="fa-brands fa-google"></i>
+        Continue with Google
+    </button>
+    <button class="microsoft-btn" type="button">
+        <i class="fa-brands fa-microsoft"></i>
+        Continue with Microsoft
+    </button>
+    <button class="github-btn" type="button">
+        <i class="fa-brands fa-github"></i>
+        Continue with GitHub
+    </button>
+</div>
+<div class="divider">
+    <span>OR</span>
+</div>    
+        <form id="loginForm">
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required>
+            </div>
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    required>
+                <i class="fa-solid fa-eye" id="togglePassword"></i>
+            </div>
+            <div class="options">
+                <label>
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+                <a href="forgot_password.html">Forgot Password?</a>
+            </div>
+            <button type="submit">
+                Login
+            </button>
+        </form>
+        <div id="errorMessage"></div>
+    </div>
+</div>
+<script src="js/login.js"></script>
+</body>
+</html>
