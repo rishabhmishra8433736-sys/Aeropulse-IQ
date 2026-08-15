@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Pulse IQ | Aeropulse-IQ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+<body>
+<header class="navbar">
+    <div class="logo">
+        <img
+            src="images/logo.jpg"
+            alt="Aeropulse-IQ"
+        >
+        <div class="logo-text">
+            <h1>
+                Aeropulse-IQ
+            </h1>
+            <span>
+                AI Environment Intelligence
+            </span>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="map.html">
+                    Live Map
+                </a>
+            </li>
+            <li>
+                <a href="report.html">
+                    Reports
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+            <li class="active">
+                <a href="chatbot.html">
+                    <i class="fa-solid fa-robot"></i>
+                    Pulse IQ
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="nav-right">
+        <div class="chat-status">
+            <span class="status-dot"></span>
+            AI Online
+        </div>
+    </div>
+</header>
+<main class="pulse-page">
+    <section class="pulse-intro">
+        <div class="pulse-intro-icon">
+            <i class="fa-solid fa-robot"></i>
+        </div>
+        <div>
+            <p class="pulse-label">
+                AEROPULSE-IQ INTELLIGENCE
+            </p>
+            <h1>
+                Pulse
+                <span>IQ</span>
+            </h1>
+            <p class="pulse-description">
+                Your environmental intelligence
+                assistant for understanding air quality,
+                pollution, weather and AI-powered
+                predictions.
+            </p>
+        </div>
+    </section>
+    <section class="pulse-chat-section">
+        <aside class="chat-sidebar">
+            <div class="chat-sidebar-top">
+                <button
+                    class="new-chat-button"
+                    id="newChatButton">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>
+                        New Chat
+                    </span>
+                </button>
+            </div>
+            <div class="chat-history">
+                <div class="history-group">
+                    <h4>
+                        Today
+                    </h4>
+                    <button
+                        class="history-chat active">
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            New conversation
+                        </span>
+                    </button>
+                    <button
+                        class="history-chat">
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            AQI Analysis
+                        </span>
+                    </button>
+                    <button
+                        class="history-chat" >
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            Pollution Analysis
+                        </span>
+                    </button>
+                    <button
+                        class="history-chat">
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            AQI Prediction
+                        </span>
+                    </button>
+                </div>
+                <div class="history-group">
+                    <h4>
+                        Yesterday
+                    </h4>
+                    <button
+                        class="history-chat">
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            Weather Impact
+                        </span>
+                    </button>
+                    <button
+                        class="history-chat">
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            PM2.5 Analysis
+                        </span>
+                    </button>
+                </div>
+                <div class="history-group">
+                    <h4>
+                        Previous
+                    </h4>
+                    <button
+                        class="history-chat">
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            Lucknow Pollution
+                        </span>
+                    </button>
+                    <button
+                        class="history-chat" >
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            24 Hour Forecast
+                        </span>
+                    </button>
+                    <button
+                        class="history-chat">
+                        <i class="fa-regular fa-message"></i>
+                        <span>
+                            Air Quality Report
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-sidebar-bottom">
+                <div class="pulse-mini-status">
+                    <span></span>
+                    <div>
+                        <strong>
+                            Pulse IQ
+                        </strong>
+                        <small>
+                            Environmental AI
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="chat-profile">
+                    <div class="chat-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3>
+                            Pulse IQ
+                        </h3>
+                        <p>
+                            <span class="online-dot"></span>
+                            Online
+                        </p>
+                    </div>
+                </div>
+                <button
+                    id="clearChat"
+                    class="clear-chat-button"
+                    title="Clear conversation">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+            <div
+                class="chat-messages"
+                id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-name">
+                            Pulse IQ
+                        </div>
+                        <div class="message-bubble">
+                            Hello! 👋
+                            <br><br>
+                            I'm
+                            <strong>Pulse IQ</strong>,
+                            the environmental intelligence
+                            assistant of Aeropulse-IQ.
+                            <br><br>
+                            I can help you understand:
+                            <br><br>
+                            🌫️ Air Quality
+                            <br>
+                            📊 Pollution
+                            <br>
+                            🔮 AI Predictions
+                            <br>
+                            📈 Pollution Trends
+                            <br>
+                            🌦️ Weather Conditions
+                            <br><br>
+                            Ask me anything about the
+                            environmental data.
+                        </div>
+                        <div class="message-time">
+                            Just now
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="typing-container"
+                id="typingIndicator">
+                <div class="message-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="typing-bubble">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="quick-questions">
+                <button
+                    class="quick-question"
+                    data-question="What is the current AQI?">
+                    <i class="fa-solid fa-wind"></i>
+                    Current AQI
+                </button>
+                <button
+                    class="quick-question"
+                    data-question="Explain the current pollution level.">
+                    <i class="fa-solid fa-smog"></i>
+                    Pollution
+                </button>
+                <button
+                    class="quick-question"
+                    data-question="What is the AQI prediction?" >
+                    <i class="fa-solid fa-chart-line"></i>
+                    Prediction
+                </button>
+                <button
+                    class="quick-question"
+                    data-question="What is the pollution trend?">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    Trend
+                </button>
+                <button
+                    class="quick-question"
+                    data-question="How does weather affect pollution?">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    Weather
+                </button>
+            </div>
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea
+                        id="chatInput"
+                        rows="1"
+                        placeholder="Ask Pulse IQ about air quality..."
+                        autocomplete="off"
+                    ></textarea>
+                    <button
+                        id="sendMessage"
+                        class="send-button"
+                        title="Send message" >
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="input-disclaimer">
+                    Pulse IQ uses available environmental
+                    data to provide intelligent insights.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
